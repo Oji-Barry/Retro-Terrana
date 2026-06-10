@@ -23,7 +23,7 @@
   --crimson:      #8b1a1a;
   --crimson-dim:  #2a0808;
   --sidebar-bg:   #100c08;
-  --sidebar-w:    260px;
+  --sidebar-w:    240px;
 }
 
 html, body {
@@ -51,52 +51,53 @@ html, body {
       180deg,
       transparent,
       transparent 28px,
-      rgba(0,0,0,0.6) 28px,
-      rgba(0,0,0,0.6) 32px
+      rgba(0,0,0,0.55) 28px,
+      rgba(0,0,0,0.55) 32px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 58px,
-      rgba(0,0,0,0.5) 58px,
-      rgba(0,0,0,0.5) 62px
+      rgba(0,0,0,0.45) 58px,
+      rgba(0,0,0,0.45) 62px
     );
   background-size: 62px 32px;
-  opacity: 0.18;
+  opacity: 0.22;
 }
 
 /* =============================================
-   SCONCES
+   SCONCES -- fixed to viewport edges, behind content
    ============================================= */
 
 .sconce {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   pointer-events: none;
 }
 
-.sconce-left  { left: 16px; }
-.sconce-right { right: 16px; }
+.sconce-left  { left: 10px; }
+.sconce-right { right: 10px; }
 
 .sconce-glow {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background: radial-gradient(circle,
-    rgba(255,140,0,0.35) 0%,
-    rgba(255,80,0,0.15) 40%,
-    transparent 72%
+    rgba(255, 160, 0, 0.55) 0%,
+    rgba(255, 90, 0, 0.30) 35%,
+    rgba(255, 50, 0, 0.12) 60%,
+    transparent 80%
   );
-  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
   pointer-events: none;
   z-index: 0;
 }
@@ -140,7 +141,7 @@ html, body {
   border-radius: 2px;
   margin-bottom: 2px;
   margin-left: -4px;
-  box-shadow: 0 0 6px rgba(200,120,0,0.4);
+  box-shadow: 0 0 8px rgba(200,120,0,0.5);
 }
 
 .flame-canvas {
@@ -168,21 +169,81 @@ html, body {
 }
 
 /* =============================================
-   SIDEBAR NAV -- fixed left, always visible
+   MOBILE DRAWER TOGGLE
+   ============================================= */
+
+.drawer-toggle {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 300;
+  background: var(--crimson-dim);
+  border: 2px solid var(--border);
+  color: var(--gold);
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.drawer-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 150;
+}
+
+.drawer-overlay.show { display: block; }
+
+/* =============================================
+   PAGE WRAPPER -- everything centered as one unit
+   ============================================= */
+
+.page-wrapper {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* CCN bar and main nav span full width of the centered block */
+.ccn-bar,
+.main-nav {
+  width: 100%;
+}
+
+/* The body row: sidebar + content side by side, centered */
+.page-body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1020px;
+  padding: 0 16px;
+  gap: 0;
+}
+
+/* =============================================
+   SIDEBAR -- in page flow, left of content
    ============================================= */
 
 .side-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: var(--sidebar-w);
-  height: 100vh;
+  flex-shrink: 0;
   background: var(--sidebar-bg);
-  border-right: 2px solid var(--border);
-  z-index: 200;
+  border: 2px solid var(--border);
+  border-top: none;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
-  box-shadow: 4px 0 20px rgba(0,0,0,0.7);
+  overflow: hidden;
 }
 
 .side-nav-header {
@@ -211,7 +272,6 @@ html, body {
 
 .drawer-close:hover { color: var(--gold); }
 
-/* Scrollable nav list */
 .nav-root {
   list-style: none;
   padding: 6px 0;
@@ -242,7 +302,6 @@ html, body {
   cursor: pointer;
   text-align: left;
   transition: background 0.15s, color 0.15s;
-  white-space: nowrap;
 }
 
 .nav-group-btn:hover {
@@ -262,7 +321,6 @@ html, body {
   transform: rotate(180deg);
 }
 
-/* Group list -- no overflow hidden, uses max-height for animation */
 .nav-group-list {
   list-style: none;
   max-height: 0;
@@ -271,7 +329,6 @@ html, body {
   background: rgba(0,0,0,0.2);
 }
 
-/* Sub-group */
 .nav-subgroup {
   border-top: 1px solid rgba(107,42,0,0.2);
 }
@@ -279,7 +336,7 @@ html, body {
 .nav-subgroup-btn {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 7px 14px 7px 22px;
   background: none;
@@ -291,8 +348,6 @@ html, body {
   cursor: pointer;
   text-align: left;
   transition: background 0.15s, color 0.15s;
-  white-space: normal;
-  word-break: break-word;
 }
 
 .nav-subgroup-btn:hover {
@@ -305,6 +360,7 @@ html, body {
   padding-right: 6px;
   white-space: normal;
   word-break: break-word;
+  line-height: 1.4;
 }
 
 .nav-subgroup-list {
@@ -324,6 +380,7 @@ html, body {
   font-family: Georgia, 'Times New Roman', serif;
   white-space: normal;
   word-break: break-word;
+  line-height: 1.4;
   transition: color 0.15s, background 0.15s;
 }
 
@@ -332,53 +389,15 @@ html, body {
   background: rgba(200,148,42,0.06);
 }
 
-/* Mobile toggle -- hidden on desktop */
-.drawer-toggle {
-  display: none;
-  position: fixed;
-  top: 14px;
-  left: 14px;
-  z-index: 300;
-  background: var(--crimson-dim);
-  border: 2px solid var(--border);
-  color: var(--gold);
-  width: 42px;
-  height: 42px;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.7);
-}
-
-.drawer-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  z-index: 150;
-}
-
-.drawer-overlay.show { display: block; }
-
 /* =============================================
-   PAGE WRAPPER -- centered in full viewport
-   The sidebar is fixed and does NOT affect
-   the flow of the page. Content centers freely.
+   CONTENT AREA
    ============================================= */
 
-.page-wrapper {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-}
-
 .content-area {
-  width: 100%;
-  max-width: 760px;
-  padding: 0 24px 48px;
+  flex: 1;
+  min-width: 0;
+  padding: 0 24px 48px 24px;
+  border-left: 2px solid var(--border);
 }
 
 /* =============================================
@@ -386,14 +405,16 @@ html, body {
    ============================================= */
 
 .ccn-bar {
-  width: 100%;
+  max-width: 1020px;
   background: linear-gradient(90deg, var(--crimson-dim), #1a0808, var(--crimson-dim));
-  border-bottom: 2px solid var(--border);
+  border: 2px solid var(--border);
+  border-top: none;
   padding: 6px 24px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+  align-self: center;
 }
 
 .ccn-logo {
@@ -409,12 +430,15 @@ html, body {
 }
 
 .main-nav {
-  width: 100%;
+  max-width: 1020px;
   display: flex;
   flex-wrap: wrap;
-  border-bottom: 2px solid var(--border);
+  border: 2px solid var(--border);
+  border-top: none;
+  border-bottom: none;
   background: #0a0604;
   justify-content: center;
+  align-self: center;
 }
 
 .nav-btn {
@@ -447,14 +471,13 @@ html, body {
   padding: 28px 10px 18px;
   border-bottom: 1px solid var(--border);
   margin-bottom: 28px;
-  width: 100%;
 }
 
 .page-title-box h1 {
-  font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
   color: var(--gold-bright);
   letter-spacing: 4px;
-  text-shadow: 0 0 20px rgba(200,148,42,0.35);
+  text-shadow: 0 0 20px rgba(200,148,42,0.4);
   font-weight: normal;
 }
 
@@ -584,36 +607,58 @@ html, body {
    RESPONSIVE
    ============================================= */
 
-@media (max-width: 760px) {
+@media (max-width: 820px) {
+  /* Sidebar becomes a fixed drawer */
   .side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    max-height: 100vh;
+    border: none;
+    border-right: 2px solid var(--border);
     transform: translateX(-100%);
     transition: transform 0.25s ease;
+    z-index: 200;
   }
 
-  .side-nav.open { transform: translateX(0); }
+  .side-nav.open {
+    transform: translateX(0);
+  }
 
   .drawer-toggle { display: flex; }
   .drawer-close  { display: block; }
 
-  .content-area { padding: 0 14px 32px; }
+  .page-body {
+    padding: 0 10px;
+  }
 
-  .ccn-bar { padding: 6px 14px; }
+  .content-area {
+    border-left: none;
+    padding: 0 10px 32px;
+  }
 
   .main-nav {
     padding-left: 50px;
     justify-content: flex-start;
   }
 
-  .sconce { display: none; }
-
   .lore-grid { grid-template-columns: 1fr; }
-
   .location-entry { margin-left: 0; }
 
   .nav-btn {
     font-size: 0.7rem;
     padding: 8px 10px;
   }
+
+  /* Sconces behind content on mobile */
+  .sconce {
+    z-index: 2;
+  }
+
+  .sconce-left  { left: 2px; }
+  .sconce-right { right: 2px; }
 }
 
 @media (max-width: 420px) {
