@@ -1,1 +1,487 @@
-/* index styles */
+/* =============================================
+   TERRANA :: world.css
+   Fantasy Fandom / Dark Candlelit Aesthetic
+   Crystalz Communication Network
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=MedievalSharp&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:          #0d0a08;
+  --bg-section:  rgba(20, 12, 8, 0.92);
+  --border:      #6b2a00;
+  --border-gold: #a07020;
+  --text:        #d4c4a0;
+  --text-dim:    #8a7a60;
+  --gold:        #c8942a;
+  --gold-bright: #f0c050;
+  --crimson:     #8b1a1a;
+  --crimson-dim: #4a0e0e;
+  --link:        #c8942a;
+  --link-hover:  #f0c050;
+  --sidebar-bg:  #100c08;
+  --sidebar-w:   220px;
+}
+
+html, body {
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IM Fell English', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* ── Subtle noise texture via SVG bg ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* =============================================
+   SCONCES
+   ============================================= */
+
+.sconce {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.sconce-left  { left: 8px; }
+.sconce-right { right: 8px; }
+
+.sconce-bracket {
+  width: 18px;
+  height: 8px;
+  background: linear-gradient(180deg, #5a3a10, #2a1a06);
+  border: 1px solid #8a5a20;
+  border-radius: 2px 2px 0 0;
+}
+
+.sconce-torch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.torch-body {
+  width: 12px;
+  height: 30px;
+  background: linear-gradient(180deg, #8a5a20 0%, #4a2a08 60%, #2a1408 100%);
+  border: 1px solid #6a4010;
+  border-radius: 2px;
+  position: relative;
+}
+
+.flame-wrap {
+  margin-top: -4px;
+}
+
+.flame-canvas {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.sconce-glow {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.12) 0%, transparent 70%);
+  margin-top: -30px;
+  pointer-events: none;
+}
+
+/* =============================================
+   SIDEBAR NAV
+   ============================================= */
+
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-w);
+  height: 100vh;
+  background: var(--sidebar-bg);
+  border-right: 2px solid var(--border);
+  overflow-y: auto;
+  z-index: 200;
+  padding: 12px 0 24px;
+  box-shadow: 4px 0 16px rgba(0,0,0,0.6);
+}
+
+.side-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px 10px;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.drawer-close {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 2px 6px;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-nav ul li a {
+  display: block;
+  padding: 4px 14px;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.15s, background 0.15s;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.side-nav ul li a:hover {
+  color: var(--gold-bright);
+  background: rgba(200, 148, 42, 0.08);
+}
+
+.nav-section-label {
+  padding: 10px 14px 3px;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--crimson);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* Mobile drawer toggle -- hidden on desktop */
+.drawer-toggle {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 300;
+  background: var(--crimson-dim);
+  border: 2px solid var(--border);
+  color: var(--gold);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+.drawer-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 150;
+}
+
+.drawer-overlay.show {
+  display: block;
+}
+
+/* =============================================
+   PAGE WRAPPER & LAYOUT
+   ============================================= */
+
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  margin-left: var(--sidebar-w);
+  padding: 0 40px 40px 40px;
+  max-width: 860px;
+}
+
+.main-layout {
+  width: 100%;
+}
+
+/* =============================================
+   CCN BAR & MAIN NAV
+   ============================================= */
+
+.ccn-bar {
+  background: linear-gradient(90deg, var(--crimson-dim), #1a0808, var(--crimson-dim));
+  border-bottom: 2px solid var(--border);
+  padding: 6px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.ccn-logo {
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+}
+
+.ccn-tagline {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 20px;
+  background: #0a0604;
+}
+
+.nav-btn {
+  display: inline-block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  padding: 8px 16px;
+  background: transparent;
+  border-right: 1px solid var(--border);
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background: var(--crimson-dim);
+  color: var(--gold-bright);
+}
+
+/* =============================================
+   PAGE TITLE
+   ============================================= */
+
+.page-title-box {
+  text-align: center;
+  padding: 24px 10px 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.page-title-box h1 {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  color: var(--gold-bright);
+  letter-spacing: 4px;
+  text-shadow: 0 0 18px rgba(200, 148, 42, 0.4);
+  font-weight: normal;
+}
+
+.page-subtitle {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  font-style: italic;
+  margin-top: 6px;
+  letter-spacing: 1px;
+}
+
+/* =============================================
+   CONTENT SECTIONS
+   ============================================= */
+
+.content-section {
+  margin-bottom: 28px;
+  scroll-margin-top: 20px;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  color: var(--gold-bright);
+  font-weight: normal;
+  letter-spacing: 2px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-gold);
+  margin-bottom: 14px;
+}
+
+.secondary-title {
+  font-size: 1.05rem;
+  color: var(--gold);
+  border-bottom-color: var(--border);
+}
+
+.section-body p {
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.section-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Location entries */
+.location-entry {
+  padding-left: 14px;
+  border-left: 2px solid var(--border);
+  margin-left: 8px;
+  margin-bottom: 22px;
+}
+
+.location-title {
+  font-size: 1rem;
+  color: var(--gold);
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.location-vibe {
+  display: block;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--crimson);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Lore card grid for six worlds */
+.lore-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.lore-card {
+  background: rgba(30, 10, 5, 0.7);
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.lore-card strong {
+  color: var(--gold);
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Divider */
+.section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+  margin: 28px 0;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+.site-footer {
+  text-align: center;
+  padding: 24px 10px 10px;
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+}
+
+.ccn-badge {
+  display: inline-block;
+  border: 2px solid var(--border-gold);
+  background: var(--crimson-dim);
+  padding: 8px 20px;
+  margin-bottom: 12px;
+  font-size: 0.78rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+.footer-text {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 720px) {
+
+  /* Hide sidebar, show toggle */
+  .side-nav {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+
+  .side-nav.open {
+    transform: translateX(0);
+  }
+
+  .drawer-toggle {
+    display: flex;
+  }
+
+  .drawer-close {
+    display: block;
+  }
+
+  /* Page takes full width */
+  .page-wrapper {
+    margin-left: 0;
+    padding: 0 14px 32px;
+  }
+
+  .main-nav {
+    padding-left: 48px; /* clear the drawer toggle button */
+  }
+
+  /* Sconces hidden on small screens -- they'd overlap content */
+  .sconce {
+    display: none;
+  }
+
+  .lore-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-entry {
+    margin-left: 0;
+  }
+
+  .nav-btn {
+    font-size: 0.7rem;
+    padding: 7px 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .page-title-box h1 {
+    letter-spacing: 2px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+  }
+}
