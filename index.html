@@ -1,1 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TERRANA :: Welcome to the CCN Portal</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
 
+  <!-- Star field canvas -->
+  <canvas id="starfield"></canvas>
+
+  <div class="page-wrapper">
+
+    <!-- CCN Header Bar -->
+    <div class="ccn-bar">
+      <span class="ccn-logo">&#9830; CCN &#9830;</span>
+      <span class="ccn-tagline">Crystalz Communication Network &mdash; Est. Year 412</span>
+    </div>
+
+    <!-- Site Title -->
+    <div class="site-header">
+      <div class="site-title-box">
+        <h1 class="site-title">:: TERRANA ::</h1>
+        <p class="site-subtitle">&#9733; YOUR GUIDE TO THE HYUMAN WORLD &#9733;</p>
+        <div class="blink-bar">* * * WELCOME TRAVELER * * *</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Nav Buttons -->
+    <nav class="main-nav">
+      <a href="index.html" class="nav-btn active">HOME</a>
+      <a href="world.html" class="nav-btn">WORLD</a>
+      <a href="lore.html" class="nav-btn">LORE</a>
+      <a href="rules.html" class="nav-btn">RULES</a>
+      <a href="combat.html" class="nav-btn">COMBAT</a>
+      <a href="characters.html" class="nav-btn">CHARACTERS</a>
+    </nav>
+
+    <hr class="divider" />
+
+    <!-- Main Content -->
+    <div class="content-grid">
+
+      <!-- Welcome Box -->
+      <div class="content-box welcome-box">
+        <h2 class="box-title">&#9670; WELCOME TO TERRANA &#9670;</h2>
+        <p>
+          You have found the official CCN portal for the world of <strong>Terrana</strong> &mdash;
+          the last surviving realm in the known cosmos. Whether you are a seasoned adventurer,
+          a curious scholar, or a newly arrived soul, this site contains everything you need
+          to navigate the Hyuman World.
+        </p>
+        <p>
+          Use the buttons above to explore the World, dive into the Lore, study the Rules
+          of adventure, or learn about Combat. The Characters section profiles notable
+          individuals shaping the fate of Terrana.
+        </p>
+        <p class="hot-tip">&#9658; <strong>TIP:</strong> Best viewed at 800x600 resolution or higher!</p>
+      </div>
+
+      <!-- About This Site -->
+      <div class="content-box about-box">
+        <h2 class="box-title">&#9670; ABOUT THIS SITE &#9670;</h2>
+        <p>
+          This portal is hosted on the <strong>Crystalz Communication Network</strong>,
+          Terrana's premier information network connecting scholars, adventurers, and
+          citizens across the Hyuman World.
+        </p>
+        <p>
+          All information is sourced from verified records including the archives of
+          <em>Monsera University</em> and field reports from active adventuring parties.
+        </p>
+        <ul class="about-list">
+          <li>&#9830; Updated regularly with new lore</li>
+          <li>&#9830; Combat rules for adventurers</li>
+          <li>&#9830; Full world history on file</li>
+          <li>&#9830; Character profiles and records</li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="content-box links-box">
+        <h2 class="box-title">&#9670; QUICK LINKS &#9670;</h2>
+        <ul class="quick-links">
+          <li><a href="world.html">&#9658; The Six Worlds</a></li>
+          <li><a href="world.html">&#9658; The Void &amp; Mana</a></li>
+          <li><a href="lore.html">&#9658; War of the Worlds</a></li>
+          <li><a href="lore.html">&#9658; The Man God</a></li>
+          <li><a href="rules.html">&#9658; Character Creation</a></li>
+          <li><a href="rules.html">&#9658; XP &amp; Progression</a></li>
+          <li><a href="combat.html">&#9658; Martial Combat</a></li>
+          <li><a href="combat.html">&#9658; Magic Combat</a></li>
+          <li><a href="combat.html">&#9658; Social Combat</a></li>
+          <li><a href="characters.html">&#9658; Notable Persons</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Visitor Counter -->
+    <div class="counter-box">
+      <span class="counter-label">VISITORS TO THIS PAGE:</span>
+      <span class="counter-digits">004721</span>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- CCN Footer Badge -->
+    <footer class="site-footer">
+      <div class="ccn-badge">
+        <span class="badge-inner">&#9830; HOSTED ON CCN &#9830;<br/>Crystalz Communication Network</span>
+      </div>
+      <p class="footer-text">
+        &copy; Year 412 &mdash; Terrana CCN Portal &mdash; All Rights Reserved<br/>
+        <small>Unauthorized duplication of this scroll-page is prohibited under CCN Terms of Service.</small>
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="js/ccn-nav.js"></script>
+  <script>
+    // Starfield animation
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+    const NUM_STARS = 180;
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < NUM_STARS; i++) {
+        stars.push({
+          x: Math.random() * canvas.width - canvas.width / 2,
+          y: Math.random() * canvas.height - canvas.height / 2,
+          z: Math.random() * canvas.width,
+          pz: 0
+        });
+      }
+    }
+
+    function drawStars() {
+      ctx.fillStyle = 'rgba(0, 0, 10, 0.25)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const cx = canvas.width / 2;
+      const cy = canvas.height / 2;
+      const speed = 4;
+
+      stars.forEach(star => {
+        star.pz = star.z;
+        star.z -= speed;
+
+        if (star.z <= 0) {
+          star.x = Math.random() * canvas.width - cx;
+          star.y = Math.random() * canvas.height - cy;
+          star.z = canvas.width;
+          star.pz = star.z;
+        }
+
+        const sx = (star.x / star.z) * canvas.width + cx;
+        const sy = (star.y / star.z) * canvas.height + cy;
+        const px = (star.x / star.pz) * canvas.width + cx;
+        const py = (star.y / star.pz) * canvas.height + cy;
+
+        const size = Math.max(0.5, (1 - star.z / canvas.width) * 3);
+        const brightness = Math.floor((1 - star.z / canvas.width) * 255);
+
+        ctx.strokeStyle = `rgb(${brightness}, ${brightness}, ${Math.min(255, brightness + 60)})`;
+        ctx.lineWidth = size;
+        ctx.beginPath();
+        ctx.moveTo(px, py);
+        ctx.lineTo(sx, sy);
+        ctx.stroke();
+      });
+
+      requestAnimationFrame(drawStars);
+    }
+
+    window.addEventListener('resize', () => {
+      resize();
+      initStars();
+    });
+
+    resize();
+    initStars();
+    drawStars();
+  </script>
+</body>
+</html>
