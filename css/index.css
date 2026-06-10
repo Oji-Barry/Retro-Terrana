@@ -222,6 +222,19 @@ html, body {
 }
 
 /* Quick Links */
+.links-category {
+  font-family: Impact, 'Arial Black', sans-serif;
+  font-size: 0.72rem;
+  color: var(--cyan);
+  letter-spacing: 2px;
+  margin: 10px 0 4px;
+  opacity: 0.75;
+}
+
+.links-category:first-of-type {
+  margin-top: 0;
+}
+
 .quick-links {
   list-style: none;
   padding: 0;
