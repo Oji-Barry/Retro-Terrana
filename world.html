@@ -8,10 +8,10 @@
 </head>
 <body>
 
-  <!-- Brick wall background (sconce glow reveals it) -->
+  <!-- Brick wall background -->
   <div class="brick-wall" aria-hidden="true"></div>
 
-  <!-- Fixed Sconces -->
+  <!-- Sconces -- fixed to viewport edges, z-index behind content on mobile -->
   <div class="sconce sconce-left" aria-hidden="true">
     <div class="sconce-glow" id="glow-left"></div>
     <div class="sconce-mount">
@@ -48,129 +48,6 @@
     </svg>
   </button>
 
-  <!-- Sidebar Nav -->
-  <nav class="side-nav" id="sideNav">
-    <div class="side-nav-header">
-      <span>&#9670; ON THIS PAGE &#9670;</span>
-      <button class="drawer-close" id="drawerClose" aria-label="Close">&#10005;</button>
-    </div>
-    <ul class="nav-root">
-
-      <!-- WORLD group -->
-      <li class="nav-group">
-        <button class="nav-group-btn" aria-expanded="false">
-          <span>WORLD</span>
-          <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-        </button>
-        <ul class="nav-group-list">
-          <li><a href="#history">&#9658; World History</a></li>
-          <li><a href="#six-worlds">&#9658; The Six Worlds</a></li>
-        </ul>
-      </li>
-
-      <!-- KINGDOMS group -->
-      <li class="nav-group">
-        <button class="nav-group-btn" aria-expanded="false">
-          <span>KINGDOMS &amp; CITIES</span>
-          <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-        </button>
-        <ul class="nav-group-list">
-
-          <!-- Central Continent sub-group -->
-          <li class="nav-subgroup">
-            <button class="nav-subgroup-btn" aria-expanded="false">
-              <span>Central Continent</span>
-              <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-            </button>
-            <ul class="nav-subgroup-list">
-              <li><a href="#asura">&#9658; Asura Kingdom</a></li>
-              <li><a href="#corporate-kingdoms">&#9658; Corporate Kingdoms</a></li>
-              <li><a href="#strife-zone">&#9658; Strife Zone</a></li>
-              <li><a href="#magic-kingdoms">&#9658; Three Magic Kingdoms</a></li>
-              <li><a href="#biheiril">&#9658; Kingdom of Biheiril</a></li>
-              <li><a href="#holy-land-swords">&#9658; Holy Land of Swords</a></li>
-              <li><a href="#dragon-kingdom">&#9658; Dragon Kingdom</a></li>
-            </ul>
-          </li>
-
-          <!-- Demon Continent sub-group -->
-          <li class="nav-subgroup">
-            <button class="nav-subgroup-btn" aria-expanded="false">
-              <span>Demon Continent</span>
-              <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-            </button>
-            <ul class="nav-subgroup-list">
-              <li><a href="#demon-continent">&#9658; Overview</a></li>
-            </ul>
-          </li>
-
-          <!-- Milis Continent sub-group -->
-          <li class="nav-subgroup">
-            <button class="nav-subgroup-btn" aria-expanded="false">
-              <span>Milis Continent</span>
-              <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-            </button>
-            <ul class="nav-subgroup-list">
-              <li><a href="#milishion">&#9658; Holy Kingdom of Milishion</a></li>
-              <li><a href="#great-forest">&#9658; The Great Forest</a></li>
-            </ul>
-          </li>
-
-          <!-- Begaritt sub-group -->
-          <li class="nav-subgroup">
-            <button class="nav-subgroup-btn" aria-expanded="false">
-              <span>Begaritt Continent</span>
-              <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-            </button>
-            <ul class="nav-subgroup-list">
-              <li><a href="#begaritt">&#9658; Overview</a></li>
-            </ul>
-          </li>
-
-          <!-- Heaven Continent sub-group -->
-          <li class="nav-subgroup">
-            <button class="nav-subgroup-btn" aria-expanded="false">
-              <span>Heaven Continent</span>
-              <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-            </button>
-            <ul class="nav-subgroup-list">
-              <li><a href="#heaven-continent">&#9658; Overview &amp; Hell Dungeon</a></li>
-            </ul>
-          </li>
-
-          <!-- Ringus Sea sub-group -->
-          <li class="nav-subgroup">
-            <button class="nav-subgroup-btn" aria-expanded="false">
-              <span>Ringus Sea</span>
-              <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-            </button>
-            <ul class="nav-subgroup-list">
-              <li><a href="#ringus-sea">&#9658; Overview &amp; The Rift</a></li>
-            </ul>
-          </li>
-
-          <!-- Monsera sub-group -->
-          <li class="nav-subgroup">
-            <button class="nav-subgroup-btn" aria-expanded="false">
-              <span>Monsera</span>
-              <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-            </button>
-            <ul class="nav-subgroup-list">
-              <li><a href="#monsera">&#9658; Overview</a></li>
-              <li><a href="#monsera-capital">&#9658; The Capital</a></li>
-              <li><a href="#grand-dungeon">&#9658; Grand Dungeon</a></li>
-              <li><a href="#shaded-isles">&#9658; Shaded Isles</a></li>
-              <li><a href="#breakwater">&#9658; Breakwater</a></li>
-            </ul>
-          </li>
-
-        </ul>
-      </li>
-
-    </ul>
-  </nav>
-  <div class="drawer-overlay" id="drawerOverlay"></div>
-
   <!-- Page Wrapper -->
   <div class="page-wrapper">
 
@@ -190,258 +67,367 @@
       <a href="characters.html" class="nav-btn">CHARACTERS</a>
     </nav>
 
-    <!-- Page Title -->
-    <div class="page-title-box">
-      <h1>&#9670; THE WORLD OF TERRANA &#9670;</h1>
-      <p class="page-subtitle">Geography, Kingdoms &amp; Cities of the Hyuman World</p>
-    </div>
+    <!-- Body: sidebar + content -->
+    <div class="page-body">
 
-    <div class="content-area">
-
-      <!-- WORLD HISTORY -->
-      <section id="history" class="content-section">
-        <h2 class="section-title">&#9830; World History</h2>
-        <div class="section-body">
-          <p>Terrana was not born as one world. It was forged from the ruins of six.</p>
-          <p>Before recorded time, six distinct realities existed as faces of a singular cosmic structure. Each had its own peoples, cultures, and magic -- the worlds of Hyumans, Beasts, Demons, Dragons, Skies, and Seas. They coexisted in tension, each face of the same impossible structure, bound together and apart at once.</p>
-          <p>Then came the Impostor.</p>
-          <p>This entity murdered the Hyuman God of Creation to steal his divine throne, then assassinated Lunaria -- the Dragon God's beloved consort and the Hyuman God's own sister. The Dragon God, consumed by grief and rage, waged a war that shattered reality. The Impostor used that chaos expertly, orchestrating the total destruction of five worlds. When the dust settled, the Impostor was sealed away in the Void -- but five worlds were gone forever.</p>
-          <p>The survivors fled to the only world still standing: the Hyuman World, hardest to reach and last to fall. They brought everything with them. Their cultures. Their magic. Their grief. Their grudges.</p>
-          <p>That collision of peoples is Terrana. A world of extraordinary diversity, impossible friction, and endless possibility. Every city you walk into carries the echo of a dead world. Every heritage you meet is a survivor's inheritance.</p>
+      <!-- Sidebar Nav -->
+      <nav class="side-nav" id="sideNav">
+        <div class="side-nav-header">
+          <span>&#9670; ON THIS PAGE &#9670;</span>
+          <button class="drawer-close" id="drawerClose" aria-label="Close">&#10005;</button>
         </div>
-      </section>
+        <ul class="nav-root">
 
-      <hr class="section-divider" />
+          <!-- WORLD group -->
+          <li class="nav-group">
+            <button class="nav-group-btn" aria-expanded="false">
+              <span>WORLD</span>
+              <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            </button>
+            <ul class="nav-group-list">
+              <li><a href="#history">&#9658; World History</a></li>
+              <li><a href="#six-worlds">&#9658; The Six Worlds</a></li>
+            </ul>
+          </li>
 
-      <!-- SIX WORLDS -->
-      <section id="six-worlds" class="content-section">
-        <h2 class="section-title">&#9830; The Six Worlds</h2>
-        <div class="section-body">
-          <p>Before the God Wars, six worlds existed. Five were destroyed. One survived. Here is what is remembered of each.</p>
-          <div class="lore-grid">
-            <div class="lore-card"><strong>&#9670; The Hyuman World</strong><br/>The surviving face. Home to the last standing civilization and the destination of all refugees. Now called Terrana.</div>
-            <div class="lore-card"><strong>&#9670; The Beast World</strong><br/>A lush, primal realm of beast races. Destroyed in the God Wars. Its people now inhabit the Great Forest and scattered territories across Terrana.</div>
-            <div class="lore-card"><strong>&#9670; The Demon World</strong><br/>A harsh, mana-dense wasteland. Destroyed. Its survivors resettled the continent that now bears their name.</div>
-            <div class="lore-card"><strong>&#9670; The Dragon World</strong><br/>Ancient and proud. Destroyed when the Dragon God turned his war inward. Its culture endures in the Dragon Kingdom of the Central Continent.</div>
-            <div class="lore-card"><strong>&#9670; The Sky World</strong><br/>Destroyed in the God Wars. The Skyfolk, its winged survivors, now inhabit the Heaven Continent three thousand meters above sea level.</div>
-            <div class="lore-card"><strong>&#9670; The Sea World</strong><br/>Destroyed. The Seafolk tribes who remain now populate the Ringus Sea, split into Merfolk and Fishfolk factions.</div>
+          <!-- KINGDOMS group -->
+          <li class="nav-group">
+            <button class="nav-group-btn" aria-expanded="false">
+              <span>KINGDOMS &amp; CITIES</span>
+              <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            </button>
+            <ul class="nav-group-list">
+
+              <li class="nav-subgroup">
+                <button class="nav-subgroup-btn" aria-expanded="false">
+                  <span>Central Continent</span>
+                  <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                </button>
+                <ul class="nav-subgroup-list">
+                  <li><a href="#asura">&#9658; Asura Kingdom</a></li>
+                  <li><a href="#corporate-kingdoms">&#9658; Corporate Kingdoms</a></li>
+                  <li><a href="#strife-zone">&#9658; Strife Zone</a></li>
+                  <li><a href="#magic-kingdoms">&#9658; Three Magic Kingdoms</a></li>
+                  <li><a href="#biheiril">&#9658; Kingdom of Biheiril</a></li>
+                  <li><a href="#holy-land-swords">&#9658; Holy Land of Swords</a></li>
+                  <li><a href="#dragon-kingdom">&#9658; Dragon Kingdom</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-subgroup">
+                <button class="nav-subgroup-btn" aria-expanded="false">
+                  <span>Demon Continent</span>
+                  <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                </button>
+                <ul class="nav-subgroup-list">
+                  <li><a href="#demon-continent">&#9658; Overview</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-subgroup">
+                <button class="nav-subgroup-btn" aria-expanded="false">
+                  <span>Milis Continent</span>
+                  <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                </button>
+                <ul class="nav-subgroup-list">
+                  <li><a href="#milishion">&#9658; Holy Kingdom of Milishion</a></li>
+                  <li><a href="#great-forest">&#9658; The Great Forest</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-subgroup">
+                <button class="nav-subgroup-btn" aria-expanded="false">
+                  <span>Begaritt Continent</span>
+                  <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                </button>
+                <ul class="nav-subgroup-list">
+                  <li><a href="#begaritt">&#9658; Overview</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-subgroup">
+                <button class="nav-subgroup-btn" aria-expanded="false">
+                  <span>Heaven Continent</span>
+                  <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                </button>
+                <ul class="nav-subgroup-list">
+                  <li><a href="#heaven-continent">&#9658; Overview &amp; Hell Dungeon</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-subgroup">
+                <button class="nav-subgroup-btn" aria-expanded="false">
+                  <span>Ringus Sea</span>
+                  <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                </button>
+                <ul class="nav-subgroup-list">
+                  <li><a href="#ringus-sea">&#9658; Overview &amp; The Rift</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-subgroup">
+                <button class="nav-subgroup-btn" aria-expanded="false">
+                  <span>Monsera</span>
+                  <svg class="nav-chevron" width="10" height="10" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                </button>
+                <ul class="nav-subgroup-list">
+                  <li><a href="#monsera">&#9658; Overview</a></li>
+                  <li><a href="#monsera-capital">&#9658; The Capital</a></li>
+                  <li><a href="#grand-dungeon">&#9658; Grand Dungeon</a></li>
+                  <li><a href="#shaded-isles">&#9658; Shaded Isles</a></li>
+                  <li><a href="#breakwater">&#9658; Breakwater</a></li>
+                </ul>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+      </nav>
+      <div class="drawer-overlay" id="drawerOverlay"></div>
+
+      <!-- Main Content -->
+      <div class="content-area">
+
+        <div class="page-title-box">
+          <h1>&#9670; THE WORLD OF TERRANA &#9670;</h1>
+          <p class="page-subtitle">Geography, Kingdoms &amp; Cities of the Hyuman World</p>
+        </div>
+
+        <section id="history" class="content-section">
+          <h2 class="section-title">&#9830; World History</h2>
+          <div class="section-body">
+            <p>Terrana was not born as one world. It was forged from the ruins of six.</p>
+            <p>Before recorded time, six distinct realities existed as faces of a singular cosmic structure. Each had its own peoples, cultures, and magic -- the worlds of Hyumans, Beasts, Demons, Dragons, Skies, and Seas. They coexisted in tension, each face of the same impossible structure, bound together and apart at once.</p>
+            <p>Then came the Impostor.</p>
+            <p>This entity murdered the Hyuman God of Creation to steal his divine throne, then assassinated Lunaria -- the Dragon God's beloved consort and the Hyuman God's own sister. The Dragon God, consumed by grief and rage, waged a war that shattered reality. The Impostor used that chaos expertly, orchestrating the total destruction of five worlds. When the dust settled, the Impostor was sealed away in the Void -- but five worlds were gone forever.</p>
+            <p>The survivors fled to the only world still standing: the Hyuman World, hardest to reach and last to fall. They brought everything with them. Their cultures. Their magic. Their grief. Their grudges.</p>
+            <p>That collision of peoples is Terrana. A world of extraordinary diversity, impossible friction, and endless possibility. Every city you walk into carries the echo of a dead world. Every heritage you meet is a survivor's inheritance.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <hr class="section-divider" />
+        <hr class="section-divider" />
 
-      <!-- KINGDOMS HEADER -->
-      <section id="kingdoms" class="content-section">
-        <h2 class="section-title">&#9830; Kingdoms &amp; Cities</h2>
-        <div class="section-body">
-          <p>What follows is a region-by-region breakdown of Terrana's major civilizations. Six continents. One ocean. One island nation that changed everything.</p>
-        </div>
-      </section>
+        <section id="six-worlds" class="content-section">
+          <h2 class="section-title">&#9830; The Six Worlds</h2>
+          <div class="section-body">
+            <p>Before the God Wars, six worlds existed. Five were destroyed. One survived. Here is what is remembered of each.</p>
+            <div class="lore-grid">
+              <div class="lore-card"><strong>&#9670; The Hyuman World</strong>The surviving face. Home to the last standing civilization and the destination of all refugees. Now called Terrana.</div>
+              <div class="lore-card"><strong>&#9670; The Beast World</strong>A lush, primal realm of beast races. Destroyed in the God Wars. Its people now inhabit the Great Forest and scattered territories across Terrana.</div>
+              <div class="lore-card"><strong>&#9670; The Demon World</strong>A harsh, mana-dense wasteland. Destroyed. Its survivors resettled the continent that now bears their name.</div>
+              <div class="lore-card"><strong>&#9670; The Dragon World</strong>Ancient and proud. Destroyed when the Dragon God turned his war inward. Its culture endures in the Dragon Kingdom of the Central Continent.</div>
+              <div class="lore-card"><strong>&#9670; The Sky World</strong>Destroyed in the God Wars. The Skyfolk, its winged survivors, now inhabit the Heaven Continent three thousand meters above sea level.</div>
+              <div class="lore-card"><strong>&#9670; The Sea World</strong>Destroyed. The Seafolk tribes who remain now populate the Ringus Sea, split into Merfolk and Fishfolk factions.</div>
+            </div>
+          </div>
+        </section>
 
-      <!-- CENTRAL CONTINENT -->
-      <section id="central-continent" class="content-section">
-        <h2 class="section-title secondary-title">&#9658; The Central Continent</h2>
-        <div class="section-body">
-          <p>The largest landmass in Terrana and the primary home of the Hyuman population. Fractured into three distinct regions by the colossal <strong>Red Dragon Mountain Range</strong> that cuts the continent like a scar.</p>
-        </div>
-      </section>
+        <hr class="section-divider" />
 
-      <section id="asura" class="content-section location-entry">
-        <h3 class="location-title">&#9830; Asura Kingdom</h3>
-        <span class="location-vibe">Vibe: Royal court intrigue, political drama, cutthroat noble bloodlines</span>
-        <div class="section-body">
-          <p>The most powerful human empire in the world, occupying the fertile western region of the Central Continent. Once an absolute monarchy, Asura has since evolved into a constitutional system where parliament holds real power and the royal family functions as high-society celebrities and ceremonial figureheads. Titles don't automatically pass to the eldest child here -- merit matters, which makes the noble houses endlessly competitive.</p>
-          <p>The physical realm is divided into four massive territories overseen by branches of the powerful <strong>Greyrat</strong> noble lineage. The royal capital <strong>Ars</strong> sits at the center -- the largest and most populous city in the entire Hyuman world.</p>
-        </div>
-      </section>
+        <section id="kingdoms" class="content-section">
+          <h2 class="section-title">&#9830; Kingdoms &amp; Cities</h2>
+          <div class="section-body">
+            <p>What follows is a region-by-region breakdown of Terrana's major civilizations. Six continents. One ocean. One island nation that changed everything.</p>
+          </div>
+        </section>
 
-      <section id="corporate-kingdoms" class="content-section location-entry">
-        <h3 class="location-title">&#9830; The Corporate Kingdoms</h3>
-        <span class="location-vibe">Vibe: Cyberpunk dystopia, Shadowrun, Akira -- capitalist hellscape with a crown on top</span>
-        <div class="section-body">
-          <p><strong>Shirone, Kikka, and Sanika</strong> maintain the facade of crowns and noble titles, but real legislative power belongs to corporate CEOs and boards of directors. Society is divided by literal walls into three tiers: Shareholders, Managers, and Laborers. The perimeter walls exist specifically to prevent workers from leaving. Decades of suppressed revolutions have left the working districts in ruins.</p>
-          <p>Back-alley magical augmentation is a mandatory fact of life for anyone looking for an edge. Refugees who escape arrive in Breakwater in a state of deep institutional paranoia -- it often takes years before they truly believe they are free.</p>
-        </div>
-      </section>
+        <section id="central-continent" class="content-section">
+          <h2 class="section-title secondary-title">&#9658; The Central Continent</h2>
+          <div class="section-body">
+            <p>The largest landmass in Terrana and the primary home of the Hyuman population. Fractured into three distinct regions by the colossal <strong>Red Dragon Mountain Range</strong> that cuts the continent like a scar.</p>
+          </div>
+        </section>
 
-      <section id="strife-zone" class="content-section location-entry">
-        <h3 class="location-title">&#9830; The Strife Zone</h3>
-        <span class="location-vibe">Vibe: Gachiakuta, Robin Hood -- gritty frontier survival in ungoverned wilderness</span>
-        <div class="section-body">
-          <p>The northern half of the southern region is an ungoverned wilderness of tribal towns locked in permanent low-level warfare. Reality's veil is thinnest here -- <strong>Void Openings</strong> occur more frequently than anywhere else on the continent, making raw mana crystals unusually accessible as local loot and trade currency. Refugee villages from the Corporate Kingdoms cluster here, insular and low-tech.</p>
-          <p>Recently, Monsera has pushed outreach efforts into the zone, opening small schools for children born in the region. It's a slow process. Trust is not easily earned in a place built on survival.</p>
-        </div>
-      </section>
+        <section id="asura" class="content-section location-entry">
+          <h3 class="location-title">&#9830; Asura Kingdom</h3>
+          <span class="location-vibe">Vibe: Royal court intrigue, political drama, cutthroat noble bloodlines</span>
+          <div class="section-body">
+            <p>The most powerful human empire in the world, occupying the fertile western region of the Central Continent. Once an absolute monarchy, Asura has since evolved into a constitutional system where parliament holds real power and the royal family functions as high-society celebrities and ceremonial figureheads. Titles don't automatically pass to the eldest child here -- merit matters, which makes the noble houses endlessly competitive.</p>
+            <p>The physical realm is divided into four massive territories overseen by branches of the powerful <strong>Greyrat</strong> noble lineage. The royal capital <strong>Ars</strong> sits at the center -- the largest and most populous city in the entire Hyuman world.</p>
+          </div>
+        </section>
 
-      <section id="magic-kingdoms" class="content-section location-entry">
-        <h3 class="location-title">&#9830; The Three Magic Kingdoms</h3>
-        <span class="location-vibe">Vibe: Gritty snow-covered magical academies, brutal northern winters</span>
-        <div class="section-body">
-          <p><strong>Ranoa, Neris, and Basherant</strong> occupy the frozen northern expanse where survival is forged through willpower and magical innovation. Historically centers of traditional magical learning, all three are now rapidly modernizing thanks to mana-powered heating networks and agricultural magic imported from Monsera. Their academic partnership with Monsera University is one of the most productive in the world.</p>
-        </div>
-      </section>
+        <section id="corporate-kingdoms" class="content-section location-entry">
+          <h3 class="location-title">&#9830; The Corporate Kingdoms</h3>
+          <span class="location-vibe">Vibe: Cyberpunk dystopia, Shadowrun, Akira -- capitalist hellscape with a crown on top</span>
+          <div class="section-body">
+            <p><strong>Shirone, Kikka, and Sanika</strong> maintain the facade of crowns and noble titles, but real legislative power belongs to corporate CEOs and boards of directors. Society is divided by literal walls into three tiers: Shareholders, Managers, and Laborers. The perimeter walls exist specifically to prevent workers from leaving. Decades of suppressed revolutions have left the working districts in ruins.</p>
+            <p>Back-alley magical augmentation is a mandatory fact of life for anyone looking for an edge. Refugees who escape arrive in Breakwater in a state of deep institutional paranoia -- it often takes years before they truly believe they are free.</p>
+          </div>
+        </section>
 
-      <section id="biheiril" class="content-section location-entry">
-        <h3 class="location-title">&#9830; Kingdom of Biheiril</h3>
-        <span class="location-vibe">Vibe: Vagabond, Rurouni Kenshin -- martial tradition practiced as spiritual philosophy</span>
-        <div class="section-body">
-          <p>Nestled in the northeastern forests and mountains, Biheiril maintains long-standing ties to the native Ogres of the nearby islands. Its deepest woods shelter the continent's only <strong>Superd</strong> settlement -- a fierce, insular people who protect the realm from threats beyond Hyuman capability while the kingdom leaves them entirely to their own ways.</p>
-        </div>
-      </section>
+        <section id="strife-zone" class="content-section location-entry">
+          <h3 class="location-title">&#9830; The Strife Zone</h3>
+          <span class="location-vibe">Vibe: Gachiakuta, Robin Hood -- gritty frontier survival in ungoverned wilderness</span>
+          <div class="section-body">
+            <p>The northern half of the southern region is an ungoverned wilderness of tribal towns locked in permanent low-level warfare. Reality's veil is thinnest here -- <strong>Void Openings</strong> occur more frequently than anywhere else on the continent, making raw mana crystals unusually accessible. Refugee villages from the Corporate Kingdoms cluster here, insular and low-tech.</p>
+            <p>Recently, Monsera has pushed outreach efforts into the zone, opening small schools for children born in the region. It's a slow process. Trust is not easily earned in a place built on survival.</p>
+          </div>
+        </section>
 
-      <section id="holy-land-swords" class="content-section location-entry">
-        <h3 class="location-title">&#9830; The Holy Land of Swords</h3>
-        <span class="location-vibe">Vibe: Permanent winter. One purpose. Zero compromise.</span>
-        <div class="section-body">
-          <p>A permanent winter wasteland in the northwest devoted entirely to the mastery of the lethal <em>Sword God Style</em>. Stubborn, fiercely traditional, and completely unchanged by time. Modernization has made zero inroads here and nobody is trying.</p>
-        </div>
-      </section>
+        <section id="magic-kingdoms" class="content-section location-entry">
+          <h3 class="location-title">&#9830; The Three Magic Kingdoms</h3>
+          <span class="location-vibe">Vibe: Gritty snow-covered magical academies, brutal northern winters</span>
+          <div class="section-body">
+            <p><strong>Ranoa, Neris, and Basherant</strong> occupy the frozen northern expanse where survival is forged through willpower and magical innovation. Historically centers of traditional magical learning, all three are now rapidly modernizing thanks to mana-powered heating networks and agricultural magic imported from Monsera. Their academic partnership with Monsera University is one of the most productive in the world.</p>
+          </div>
+        </section>
 
-      <section id="dragon-kingdom" class="content-section location-entry">
-        <h3 class="location-title">&#9830; The Dragon Kingdom</h3>
-        <span class="location-vibe">Vibe: House of the Dragon meets Imperial China -- heavy bloodlines, sovereign authority</span>
-        <div class="section-body">
-          <p>Situated at the southern tip of the continent, this proud monarchy serves as the vital trade bridge between Monsera's southern operations and the Begaritt Continent. It stands as the <strong>third most powerful nation in the world</strong>, modernizing modestly while preserving its deep cultural identity. Strict hierarchies are not a formality here -- they are survival infrastructure.</p>
-        </div>
-      </section>
+        <section id="biheiril" class="content-section location-entry">
+          <h3 class="location-title">&#9830; Kingdom of Biheiril</h3>
+          <span class="location-vibe">Vibe: Vagabond, Rurouni Kenshin -- martial tradition practiced as spiritual philosophy</span>
+          <div class="section-body">
+            <p>Nestled in the northeastern forests and mountains, Biheiril maintains long-standing ties to the native Ogres of the nearby islands. Its deepest woods shelter the continent's only <strong>Superd</strong> settlement -- a fierce, insular people who protect the realm from threats beyond Hyuman capability while the kingdom leaves them entirely to their own ways.</p>
+          </div>
+        </section>
 
-      <hr class="section-divider" />
+        <section id="holy-land-swords" class="content-section location-entry">
+          <h3 class="location-title">&#9830; The Holy Land of Swords</h3>
+          <span class="location-vibe">Vibe: Permanent winter. One purpose. Zero compromise.</span>
+          <div class="section-body">
+            <p>A permanent winter wasteland in the northwest devoted entirely to the mastery of the lethal <em>Sword God Style</em>. Stubborn, fiercely traditional, and completely unchanged by time. Modernization has made zero inroads here and nobody is trying.</p>
+          </div>
+        </section>
 
-      <!-- DEMON CONTINENT -->
-      <section id="demon-continent" class="content-section">
-        <h2 class="section-title secondary-title">&#9658; The Demon Continent</h2>
-        <span class="location-vibe">Vibe: Trigun, Desert Punk -- harsh unforgiving badlands where power is the only law</span>
-        <div class="section-body">
-          <p>An unforgiving wasteland east of the Ringus Sea. The land is saturated with crushingly high ambient mana density -- environments are lethal, monsters are apex predators, and magic is volatile in both directions. Spells hit harder here. So does everything else. The continent is governed across ten jurisdictions, each ruled by an <strong>Immortal Demon Lord</strong>.</p>
-          <p>Notable among them: <strong>Empress Kishirika Kishirisu</strong>, the chaotic current Empress, legendary for gifting her twelve coveted Magic Power Eyes to those who earn her favor. <strong>Badigadi</strong>, her husband, known across realms as the Fighting God and the Wise Demon King. And the ancient <strong>Beethove Tovetha</strong> -- a black slime-octopus entity ruling the Library Labyrinth, endlessly recording every piece of written lore in existence.</p>
-        </div>
-      </section>
+        <section id="dragon-kingdom" class="content-section location-entry">
+          <h3 class="location-title">&#9830; The Dragon Kingdom</h3>
+          <span class="location-vibe">Vibe: House of the Dragon meets Imperial China -- heavy bloodlines, sovereign authority</span>
+          <div class="section-body">
+            <p>Situated at the southern tip of the continent, this proud monarchy serves as the vital trade bridge between Monsera's southern operations and the Begaritt Continent. It stands as the <strong>third most powerful nation in the world</strong>, modernizing modestly while preserving its deep cultural identity. Strict hierarchies are not a formality here -- they are survival infrastructure.</p>
+          </div>
+        </section>
 
-      <hr class="section-divider" />
+        <hr class="section-divider" />
 
-      <!-- MILIS CONTINENT -->
-      <section id="milis-continent" class="content-section">
-        <h2 class="section-title secondary-title">&#9658; The Milis Continent</h2>
-        <div class="section-body">
-          <p>Located southeast of the Central Continent, split cleanly in two by the jagged <strong>Blue Dragon Mountain Range</strong>.</p>
-        </div>
-      </section>
+        <section id="demon-continent" class="content-section">
+          <h2 class="section-title secondary-title">&#9658; The Demon Continent</h2>
+          <span class="location-vibe">Vibe: Trigun, Desert Punk -- harsh unforgiving badlands where power is the only law</span>
+          <div class="section-body">
+            <p>An unforgiving wasteland east of the Ringus Sea. The land is saturated with crushingly high ambient mana density -- environments are lethal, monsters are apex predators, and magic is volatile in both directions. The continent is governed across ten jurisdictions, each ruled by an <strong>Immortal Demon Lord</strong>.</p>
+            <p>Notable among them: <strong>Empress Kishirika Kishirisu</strong>, the chaotic current Empress, legendary for gifting her twelve coveted Magic Power Eyes to those who earn her favor. <strong>Badigadi</strong>, her husband, known across realms as the Fighting God and the Wise Demon King. And the ancient <strong>Beethove Tovetha</strong> -- a black slime-octopus entity ruling the Library Labyrinth, endlessly recording every piece of written lore in existence.</p>
+          </div>
+        </section>
 
-      <section id="milishion" class="content-section location-entry">
-        <h3 class="location-title">&#9830; Holy Kingdom of Milishion</h3>
-        <span class="location-vibe">Vibe: Blue Exorcist meets deep religious and political intrigue -- faith as an absolute weapon</span>
-        <div class="section-body">
-          <p>The absolute seat of power for the <strong>Church of Milis</strong> and the <strong>second most powerful nation in Terrana</strong>. Notably a genuinely integrated society -- Hyumans and beastfolk share equal footing, making up roughly half the population each. The Holy Church, the Royal Family, and Parliament form three co-equal branches of government, though historically the Church has carried the heaviest political weight.</p>
-        </div>
-      </section>
+        <hr class="section-divider" />
 
-      <section id="great-forest" class="content-section location-entry">
-        <h3 class="location-title">&#9830; The Great Forest</h3>
-        <span class="location-vibe">Vibe: Lord of the Rings meets Avatar -- ancient, sacred, fiercely resisting modernization</span>
-        <div class="section-body">
-          <p>The northern expanse of the Milis Continent serves as the ancestral home of the Beast Races. The southern reaches shelter the reclusive <strong>Elves</strong>, who balance cutting-edge Monseran technology with their deep relationship to the natural world. Further in, the <strong>Hobbits</strong> occupy the hilly areas, traditional but not closed off. In the Blue Dragon Mountains, the <strong>Dwarves</strong> have discovered a deep love for steam power -- a technology Monsera started but the Dwarves have developed with far more enthusiasm than anyone expected.</p>
-        </div>
-      </section>
+        <section id="milis-continent" class="content-section">
+          <h2 class="section-title secondary-title">&#9658; The Milis Continent</h2>
+          <div class="section-body">
+            <p>Located southeast of the Central Continent, split cleanly in two by the jagged <strong>Blue Dragon Mountain Range</strong>.</p>
+          </div>
+        </section>
 
-      <hr class="section-divider" />
+        <section id="milishion" class="content-section location-entry">
+          <h3 class="location-title">&#9830; Holy Kingdom of Milishion</h3>
+          <span class="location-vibe">Vibe: Blue Exorcist meets deep religious and political intrigue -- faith as an absolute weapon</span>
+          <div class="section-body">
+            <p>The absolute seat of power for the <strong>Church of Milis</strong> and the <strong>second most powerful nation in Terrana</strong>. Notably a genuinely integrated society -- Hyumans and beastfolk share equal footing, making up roughly half the population each. The Holy Church, the Royal Family, and Parliament form three co-equal branches of government, though historically the Church has carried the heaviest political weight.</p>
+          </div>
+        </section>
 
-      <!-- BEGARITT -->
-      <section id="begaritt" class="content-section">
-        <h2 class="section-title secondary-title">&#9658; The Begaritt Continent</h2>
-        <span class="location-vibe">Vibe: Made in Abyss, Goblin Slayer, Dune -- a beautiful but lethal frontier of veterans who pushed too far</span>
-        <div class="section-body">
-          <p>A lawless, treacherous southwestern landmass with no unified government. Populated almost entirely by adventurers, outlaws, and those who wish to exist outside the reach of any state. The continent is entirely defined by its dangerous concentration of shifting Labyrinths and volatile magical anomalies.</p>
-          <p>Guild membership here is not a profession. It is a mandatory requirement for survival.</p>
-        </div>
-      </section>
+        <section id="great-forest" class="content-section location-entry">
+          <h3 class="location-title">&#9830; The Great Forest</h3>
+          <span class="location-vibe">Vibe: Lord of the Rings meets Avatar -- ancient, sacred, fiercely resisting modernization</span>
+          <div class="section-body">
+            <p>The northern expanse of the Milis Continent serves as the ancestral home of the Beast Races. The southern reaches shelter the reclusive <strong>Elves</strong>, who balance cutting-edge Monseran technology with their deep relationship to the natural world. Further in, the <strong>Hobbits</strong> occupy the hilly areas, traditional but not closed off. In the Blue Dragon Mountains, the <strong>Dwarves</strong> have discovered a deep love for steam power -- a technology Monsera started but the Dwarves developed with far more enthusiasm than anyone expected.</p>
+          </div>
+        </section>
 
-      <hr class="section-divider" />
+        <hr class="section-divider" />
 
-      <!-- HEAVEN CONTINENT -->
-      <section id="heaven-continent" class="content-section">
-        <h2 class="section-title secondary-title">&#9658; The Heaven Continent</h2>
-        <span class="location-vibe">Vibe: Nausicaä, Castle in the Sky above -- Hazbin Hotel, Chainsaw Man below</span>
-        <div class="section-body">
-          <p>A sheer plateau resting <strong>three thousand meters above sea level</strong>. Inhabited by the Skyfolk -- winged, elven-like humanoids whose aloof, detached worldview makes them feel genuinely alien to most outsiders. Their community is small and insular. Outsiders are immediately noticed.</p>
-          <p>Beneath the plateau lies the <strong>Hell Dungeon</strong> -- a nine-layered subterranean rift where each layer is its own kingdom ruled by a Devil. Currently in high unrest as a tyrannical Prince from the 4th layer wages a war of conquest across the 3rd, 5th, and 6th. Total chaos has only been avoided through diplomatic intervention by Monsera's Slime King.</p>
-        </div>
-      </section>
+        <section id="begaritt" class="content-section">
+          <h2 class="section-title secondary-title">&#9658; The Begaritt Continent</h2>
+          <span class="location-vibe">Vibe: Made in Abyss, Goblin Slayer, Dune -- a beautiful but lethal frontier of veterans who pushed too far</span>
+          <div class="section-body">
+            <p>A lawless, treacherous southwestern landmass with no unified government. Populated almost entirely by adventurers, outlaws, and those who wish to exist outside the reach of any state. The continent is entirely defined by its dangerous concentration of shifting Labyrinths and volatile magical anomalies.</p>
+            <p>Guild membership here is not a profession. It is a mandatory requirement for survival.</p>
+          </div>
+        </section>
 
-      <hr class="section-divider" />
+        <hr class="section-divider" />
 
-      <!-- RINGUS SEA -->
-      <section id="ringus-sea" class="content-section">
-        <h2 class="section-title secondary-title">&#9658; The Ringus Sea</h2>
-        <span class="location-vibe">Vibe: Vast, tempestuous, and hiding something catastrophic at its center</span>
-        <div class="section-body">
-          <p>The tempestuous central ocean connecting all six continents. The Seafolk tribes -- <strong>Merfolk</strong> dominating the East and West, <strong>Fishfolk</strong> controlling North and South -- populate its waters, each tribe answering to its own sovereign Chieftain.</p>
-          <p>At the center of the sea sits <strong>The Rift</strong> -- a permanent, catastrophic tear in the Void. Approximately once a year it ruptures to spawn a Kaiju-class threat. These cataclysms are held at bay exclusively by the <strong>Hero Rangers Corps</strong> operating from their northern island stronghold. The Edict of Balance, the Titan's ultimate deployment, has only been authorized twice in the last century.</p>
-        </div>
-      </section>
+        <section id="heaven-continent" class="content-section">
+          <h2 class="section-title secondary-title">&#9658; The Heaven Continent</h2>
+          <span class="location-vibe">Vibe: Nausicaä, Castle in the Sky above -- Hazbin Hotel, Chainsaw Man below</span>
+          <div class="section-body">
+            <p>A sheer plateau resting <strong>three thousand meters above sea level</strong>. Inhabited by the Skyfolk -- winged, elven-like humanoids whose aloof, detached worldview makes them feel genuinely alien to most outsiders. Their community is small and insular. Outsiders are immediately noticed.</p>
+            <p>Beneath the plateau lies the <strong>Hell Dungeon</strong> -- a nine-layered subterranean rift where each layer is its own kingdom ruled by a Devil. Currently in high unrest as a tyrannical Prince from the 4th layer wages a war of conquest across the 3rd, 5th, and 6th. Total chaos has only been avoided through diplomatic intervention by the Slime King.</p>
+          </div>
+        </section>
 
-      <hr class="section-divider" />
+        <hr class="section-divider" />
 
-      <!-- MONSERA -->
-      <section id="monsera" class="content-section">
-        <h2 class="section-title secondary-title">&#9658; Monsera</h2>
-        <span class="location-vibe">Vibe: Retro-futuristic metropolis -- modern New York, neon Tokyo, late-90s vision of the future</span>
-        <div class="section-body">
-          <p>Positioned centrally within the world's map, the island nation of Monsera is the technological and magical epicenter of modern Terrana. What began as a fractured tribal collective of monster races one hundred and fifty years ago is now a global superpower -- built from the ground up by a reincarnated computer science student from Stockholm who arrived as a blind, senseless slime.</p>
-          <p><strong>Julius Geoffrey Golbjorn</strong>, the Slime King, spent a decade in total sensory deprivation before beginning his work. He built the university, the CCN, the dungeon infrastructure, and the Hero Rangers Corps because he wanted to play video games again. He currently sits on a beanbag chair in the royal palace playing his own creations. His current grand project is an exact reconstruction of Final Fantasy VII.</p>
-          <p>The government is a guild-based parliamentary democracy. The King is purely ceremonial. Every citizen 18 or older can join a guild and gain a political voice through one of ten cabinet factions: Adventurers, Arts, Makers, Merchants, Mages, Farmers, Healers, Scholars, Laborers, and Navigators.</p>
-        </div>
-      </section>
+        <section id="ringus-sea" class="content-section">
+          <h2 class="section-title secondary-title">&#9658; The Ringus Sea</h2>
+          <span class="location-vibe">Vibe: Vast, tempestuous, and hiding something catastrophic at its center</span>
+          <div class="section-body">
+            <p>The tempestuous central ocean connecting all six continents. The Seafolk tribes -- <strong>Merfolk</strong> dominating the East and West, <strong>Fishfolk</strong> controlling North and South -- populate its waters, each tribe answering to its own sovereign Chieftain.</p>
+            <p>At the center of the sea sits <strong>The Rift</strong> -- a permanent, catastrophic tear in the Void. Approximately once a year it ruptures to spawn a Kaiju-class threat. These cataclysms are held at bay exclusively by the <strong>Hero Rangers Corps</strong>. The Edict of Balance, the Titan's ultimate deployment, has only been authorized twice in the last century.</p>
+          </div>
+        </section>
 
-      <section id="monsera-capital" class="content-section location-entry">
-        <h3 class="location-title">&#9830; The Capital City</h3>
-        <span class="location-vibe">Vibe: John Hughes coming-of-age, slice-of-life with high stakes, tight-knit urban community</span>
-        <div class="section-body">
-          <p>The largest metropolis in the world. Home to <strong>Monsera University</strong> -- entirely free tuition, student stipends, and a curriculum ranging from combat training to time manipulation and dreamwalking. The Special Students Homeroom handles societal misfits and politically complicated cases under Professor Malakai Nocturne. Combat and Ethics is commanded by Professor Aldric Thorne, a master holding the mythical title of <em>Water God</em>.</p>
-          <p>The <strong>CCN (Crystalz Communication Network)</strong> places a personal communication device in the hands of nearly every citizen. Handheld Personal Crystalz function like smartphones. Massive stationary Crystalz function like flat-screen televisions. The network covers all of Monsera and stretches to foreign population centers via major trade relays.</p>
-        </div>
-      </section>
+        <hr class="section-divider" />
 
-      <section id="grand-dungeon" class="content-section location-entry">
-        <h3 class="location-title">&#9830; The Grand Dungeon &amp; Arena</h3>
-        <span class="location-vibe">Vibe: Dungeon Meshi, DanMachi -- classic dungeon crawling with found-family in lethal depths</span>
-        <div class="section-body">
-          <p>Located several miles east of the capital. The Grand Colosseum is owned by the citizenry of Monsera. The <strong>100-Floor Dungeon</strong> below is co-owned by the Slime King and the Earth God -- a female, fairy-type Immortal Demon King who regularly redesigns floor layouts to prevent veteran delvers from getting too comfortable.</p>
-          <p>Death inside is a temporary setback. The Respawn Locker system teleports fallen adventurers back to their locker fully healed. The monsters are paid employees. No adventuring party has ever reached the bottom ten floors.</p>
-          <p>Notable floors include: <strong>Floor 15 (Nite City)</strong> -- a sprawling underground metropolis governed by a reformed Devil Queen who discovered devils could harvest mana through joy rather than suffering. <strong>Floor 55 (The Archives of Slate)</strong> -- a scholar's hub carved from volcanic rock with mechanized slate-tablet shelves. <strong>Level 14&#190;</strong> -- a hidden pocket studio managing CCN content production, run by an eccentric ex-Prince of Hell.</p>
-        </div>
-      </section>
+        <section id="monsera" class="content-section">
+          <h2 class="section-title secondary-title">&#9658; Monsera</h2>
+          <span class="location-vibe">Vibe: Retro-futuristic metropolis -- modern New York, neon Tokyo, late-90s vision of the future</span>
+          <div class="section-body">
+            <p>Positioned centrally within the world's map, the island nation of Monsera is the technological and magical epicenter of modern Terrana. What began as a fractured tribal collective of monster races one hundred and fifty years ago is now a global superpower -- built from the ground up by a reincarnated computer science student from Stockholm who arrived as a blind, senseless slime.</p>
+            <p><strong>Julius Geoffrey Golbjorn</strong>, the Slime King, spent a decade in total sensory deprivation before beginning his work. He built the university, the CCN, the dungeon infrastructure, and the Hero Rangers Corps because he wanted to play video games again. He currently sits on a beanbag chair in the royal palace playing his own creations. His current grand project is an exact reconstruction of Final Fantasy VII.</p>
+            <p>The government is a guild-based parliamentary democracy. The King is purely ceremonial. Every citizen 18 or older can join a guild and gain a political voice through one of ten cabinet factions: Adventurers, Arts, Makers, Merchants, Mages, Farmers, Healers, Scholars, Laborers, and Navigators.</p>
+          </div>
+        </section>
 
-      <section id="shaded-isles" class="content-section location-entry">
-        <h3 class="location-title">&#9830; The Shaded Isles</h3>
-        <span class="location-vibe">Vibe: Berserk, Hellsing, Claymore -- gothic dark fantasy under permanent storm clouds</span>
-        <div class="section-body">
-          <p>A grim archipelago lying just off the Monseran coast -- close enough to fall under the nation-state's jurisdiction, the way Tasmania belongs to Australia or Okinawa to Japan. The isles are governed by three ancient, sovereign noble houses of the Undead: a <strong>Vampire</strong>, a <strong>Lich</strong>, and a <strong>Dullahan</strong>. Their political relationship with the capital is functional if uneasy. The ambient necrotic energy is strong enough that extended exposure triggers a natural attunement to Shade Magic, whether visitors want it or not.</p>
-        </div>
-      </section>
+        <section id="monsera-capital" class="content-section location-entry">
+          <h3 class="location-title">&#9830; The Capital City</h3>
+          <span class="location-vibe">Vibe: John Hughes coming-of-age, slice-of-life with high stakes, tight-knit urban community</span>
+          <div class="section-body">
+            <p>The largest metropolis in the world. Home to <strong>Monsera University</strong> -- entirely free tuition, student stipends, and a curriculum ranging from combat training to time manipulation and dreamwalking. The Special Students Homeroom handles societal misfits and politically complicated cases under Professor Malakai Nocturne. Combat and Ethics is commanded by Professor Aldric Thorne, a master holding the mythical title of <em>Water God</em>.</p>
+            <p>The <strong>CCN (Crystalz Communication Network)</strong> places a personal communication device in the hands of nearly every citizen. Handheld Personal Crystalz function like smartphones. Massive stationary Crystalz function like flat-screen televisions. The network covers all of Monsera and stretches to foreign population centers via major trade relays.</p>
+          </div>
+        </section>
 
-      <section id="breakwater" class="content-section location-entry">
-        <h3 class="location-title">&#9830; Breakwater</h3>
-        <span class="location-vibe">Vibe: Black Lagoon, Cowboy Bebop -- gritty noir adventure in a multi-heritage port city</span>
-        <div class="section-body">
-          <p>Established on the southern coast of the Central Continent, Breakwater is Monsera's vital military port -- built primarily to slash response times to Void Breaches in the Strife Zone, and secondarily as a massive trade gateway. High-energy New Orleans vibe, majority monster-race population, every global heritage represented on one crowded waterfront.</p>
-          <p>All ten government guilds maintain a heavy presence. The Hero Rangers Corps keeps a permanent detachment. The Refugee Haven operates continuously -- escapees from the Corporate Kingdoms are granted automatic asylum on arrival. True institutional authority doesn't exist here, so anyone can claim their own freedom. The hard part is believing it.</p>
-        </div>
-      </section>
+        <section id="grand-dungeon" class="content-section location-entry">
+          <h3 class="location-title">&#9830; The Grand Dungeon &amp; Arena</h3>
+          <span class="location-vibe">Vibe: Dungeon Meshi, DanMachi -- classic dungeon crawling with found-family in lethal depths</span>
+          <div class="section-body">
+            <p>Located several miles east of the capital. The Grand Colosseum is owned by the citizenry of Monsera. The <strong>100-Floor Dungeon</strong> below is co-owned by the Slime King and the Earth God -- a female, fairy-type Immortal Demon King who regularly redesigns floor layouts to prevent veteran delvers from getting too comfortable.</p>
+            <p>Death inside is a temporary setback. The Respawn Locker system teleports fallen adventurers back to their locker fully healed. The monsters are paid employees. No adventuring party has ever reached the bottom ten floors.</p>
+            <p>Notable floors: <strong>Floor 15 (Nite City)</strong> -- a sprawling underground metropolis governed by a reformed Devil Queen who discovered devils could harvest mana through joy rather than suffering. <strong>Floor 55 (The Archives of Slate)</strong> -- a scholar's hub carved from volcanic rock. <strong>Level 14&#190;</strong> -- a hidden pocket studio managing CCN content production, run by an eccentric ex-Prince of Hell.</p>
+          </div>
+        </section>
 
-      <hr class="section-divider" />
+        <section id="shaded-isles" class="content-section location-entry">
+          <h3 class="location-title">&#9830; The Shaded Isles</h3>
+          <span class="location-vibe">Vibe: Berserk, Hellsing, Claymore -- gothic dark fantasy under permanent storm clouds</span>
+          <div class="section-body">
+            <p>A grim archipelago lying just off the Monseran coast -- close enough to fall under the nation-state's jurisdiction, the way Tasmania belongs to Australia or Okinawa to Japan. Governed by three ancient sovereign noble houses of the Undead: a <strong>Vampire</strong>, a <strong>Lich</strong>, and a <strong>Dullahan</strong>. The ambient necrotic energy is strong enough that extended exposure triggers a natural attunement to Shade Magic, whether visitors want it or not.</p>
+          </div>
+        </section>
 
-      <!-- Footer -->
-      <footer class="site-footer">
-        <div class="ccn-badge">
-          <span>&#9830; HOSTED ON CCN &#9830;</span><br/>
-          <small>Crystalz Communication Network</small>
-        </div>
-        <p class="footer-text">&copy; Year 412 &mdash; Terrana CCN Portal &mdash; All Rights Reserved</p>
-      </footer>
+        <section id="breakwater" class="content-section location-entry">
+          <h3 class="location-title">&#9830; Breakwater</h3>
+          <span class="location-vibe">Vibe: Black Lagoon, Cowboy Bebop -- gritty noir adventure in a multi-heritage port city</span>
+          <div class="section-body">
+            <p>Established on the southern coast of the Central Continent, Breakwater is Monsera's vital military port -- built primarily to slash response times to Void Breaches in the Strife Zone, and secondarily as a massive trade gateway. High-energy New Orleans vibe, majority monster-race population, every global heritage represented on one crowded waterfront.</p>
+            <p>All ten government guilds maintain a heavy presence. The Hero Rangers Corps keeps a permanent detachment. The Refugee Haven operates continuously -- escapees from the Corporate Kingdoms are granted automatic asylum on arrival. The hard part is believing it.</p>
+          </div>
+        </section>
 
-    </div>
-  </div>
+        <hr class="section-divider" />
+
+        <footer class="site-footer">
+          <div class="ccn-badge">
+            <span>&#9830; HOSTED ON CCN &#9830;</span><br/>
+            <small>Crystalz Communication Network</small>
+          </div>
+          <p class="footer-text">&copy; Year 412 &mdash; Terrana CCN Portal &mdash; All Rights Reserved</p>
+        </footer>
+
+      </div><!-- end content-area -->
+    </div><!-- end page-body -->
+  </div><!-- end page-wrapper -->
 
   <script src="js/ccn-nav.js"></script>
   <script>
@@ -459,7 +445,7 @@
     overlay.addEventListener('click', closeDrawer);
     nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
-    // ── Collapsible nav groups ──
+    // ── Collapsible groups ──
     document.querySelectorAll('.nav-group-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const group = btn.closest('.nav-group');
@@ -477,15 +463,13 @@
         const open  = group.classList.toggle('expanded');
         btn.setAttribute('aria-expanded', open);
         list.style.maxHeight = open ? list.scrollHeight + 'px' : '0';
-        // Update parent group height
+        // Recalculate parent height
         const parentList = group.closest('.nav-group-list');
-        if (parentList) {
-          parentList.style.maxHeight = parentList.scrollHeight + 'px';
-        }
+        if (parentList) parentList.style.maxHeight = parentList.scrollHeight + 'px';
       });
     });
 
-    // ── Pixel flame + glow renderer ──
+    // ── Pixel flame + pulsing glow ──
     function makeFlame(canvasId, glowId) {
       const canvas = document.getElementById(canvasId);
       const glow   = document.getElementById(glowId);
@@ -504,31 +488,27 @@
       const cols = 8;
       const rows = 12;
       let buf = new Array(cols * rows).fill(0);
-      let glowIntensity = 0.5;
 
       function step() {
-        // Seed bottom row with hot values
         for (let x = 0; x < cols; x++) {
           buf[(rows - 1) * cols + x] = Math.random() > 0.1
             ? 13 + Math.floor(Math.random() * 3)
-            : 9  + Math.floor(Math.random() * 5);
+            :  9 + Math.floor(Math.random() * 5);
         }
 
-        // Propagate upward
         let totalHeat = 0;
         for (let y = 0; y < rows - 1; y++) {
           for (let x = 0; x < cols; x++) {
-            const below = buf[(y + 1) * cols + x];
-            const bleft = buf[(y + 1) * cols + Math.max(0, x - 1)];
-            const bright= buf[(y + 1) * cols + Math.min(cols - 1, x + 1)];
-            const avg   = (below + bleft + bright) / 3;
-            const val   = Math.max(0, Math.floor(avg - Math.random() * 1.4));
+            const below  = buf[(y + 1) * cols + x];
+            const bleft  = buf[(y + 1) * cols + Math.max(0, x - 1)];
+            const bright = buf[(y + 1) * cols + Math.min(cols - 1, x + 1)];
+            const avg    = (below + bleft + bright) / 3;
+            const val    = Math.max(0, Math.floor(avg - Math.random() * 1.4));
             buf[y * cols + x] = val;
             totalHeat += val;
           }
         }
 
-        // Draw flame
         ctx.clearRect(0, 0, W, H);
         const cw = W / cols;
         const ch = H / rows;
@@ -537,20 +517,21 @@
             const v = buf[y * cols + x];
             if (v === 0) continue;
             ctx.fillStyle = palette[Math.min(15, v)];
-            ctx.fillRect(Math.floor(x * cw), Math.floor(y * ch), Math.ceil(cw) + 1, Math.ceil(ch) + 1);
+            ctx.fillRect(
+              Math.floor(x * cw), Math.floor(y * ch),
+              Math.ceil(cw) + 1,  Math.ceil(ch) + 1
+            );
           }
         }
 
-        // Sync glow to flame heat
-        const maxHeat = cols * rows * 15;
-        const normalized = Math.min(1, totalHeat / (maxHeat * 0.55));
-        glowIntensity = glowIntensity * 0.85 + normalized * 0.15;
-
+        // Sync glow size and brightness to flame heat
         if (glow) {
-          const size = 120 + glowIntensity * 180;
-          const opacity = 0.08 + glowIntensity * 0.18;
-          glow.style.width  = size + 'px';
-          glow.style.height = size + 'px';
+          const maxHeat  = cols * rows * 15;
+          const norm     = Math.min(1, totalHeat / (maxHeat * 0.55));
+          const size     = 180 + norm * 240;
+          const opacity  = 0.55 + norm * 0.35;
+          glow.style.width   = size + 'px';
+          glow.style.height  = size + 'px';
           glow.style.opacity = opacity;
         }
       }
