@@ -1,1 +1,330 @@
-/* index styles */
+/* =============================================
+   TERRANA :: index.css
+   GeoCities Chaos Aesthetic
+   Crystalz Communication Network
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --yellow: #FFE600;
+  --cyan: #00FFFF;
+  --hot-pink: #FF00CC;
+  --green: #00FF66;
+  --dark-bg: #00000A;
+  --box-bg: rgba(0, 0, 20, 0.82);
+  --box-border: #00FFFF;
+  --text-main: #E8E8FF;
+  --link: #FF00CC;
+  --link-hover: #FFE600;
+}
+
+html, body {
+  min-height: 100%;
+  background: var(--dark-bg);
+  color: var(--text-main);
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Fixed starfield behind everything */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+}
+
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 12px 16px 40px;
+}
+
+/* CCN Top Bar */
+.ccn-bar {
+  background: linear-gradient(90deg, #00008B, #4B0082, #00008B);
+  border: 2px solid var(--cyan);
+  padding: 6px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.ccn-logo {
+  font-family: Impact, 'Arial Black', sans-serif;
+  font-size: 1.1rem;
+  color: var(--yellow);
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px var(--yellow);
+}
+
+.ccn-tagline {
+  font-size: 0.8rem;
+  color: var(--cyan);
+  opacity: 0.85;
+}
+
+/* Site Header */
+.site-header {
+  text-align: center;
+  padding: 18px 10px 10px;
+}
+
+.site-title-box {
+  display: inline-block;
+  border: 3px double var(--hot-pink);
+  padding: 14px 24px;
+  background: rgba(80, 0, 80, 0.35);
+  box-shadow: 0 0 18px var(--hot-pink), inset 0 0 12px rgba(255,0,204,0.1);
+}
+
+.site-title {
+  font-family: Impact, 'Arial Black', sans-serif;
+  font-size: clamp(2rem, 8vw, 3.4rem);
+  color: var(--yellow);
+  text-shadow: 0 0 12px var(--yellow), 2px 2px 0 #000;
+  letter-spacing: 6px;
+  line-height: 1.1;
+}
+
+.site-subtitle {
+  font-family: 'VT323', monospace;
+  font-size: clamp(1rem, 4vw, 1.3rem);
+  color: var(--cyan);
+  letter-spacing: 3px;
+  margin-top: 6px;
+  text-shadow: 0 0 8px var(--cyan);
+}
+
+.blink-bar {
+  margin-top: 8px;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: var(--hot-pink);
+  letter-spacing: 4px;
+  animation: blink 1.2s step-start infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Divider */
+.divider {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--cyan), var(--hot-pink), var(--yellow), var(--cyan), transparent);
+  margin: 14px 0;
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+/* Nav */
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.nav-btn {
+  display: inline-block;
+  font-family: Impact, 'Arial Black', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  padding: 7px 14px;
+  background: linear-gradient(180deg, #1a006e, #08003a);
+  border: 2px solid var(--cyan);
+  color: var(--yellow);
+  text-decoration: none;
+  text-shadow: 0 0 6px var(--yellow);
+  box-shadow: 0 0 6px var(--cyan);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  cursor: pointer;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background: linear-gradient(180deg, var(--hot-pink), #7a0050);
+  color: #fff;
+  border-color: var(--hot-pink);
+  box-shadow: 0 0 10px var(--hot-pink);
+  text-shadow: 0 0 8px #fff;
+}
+
+/* Content Grid */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 14px;
+  margin: 14px 0;
+}
+
+.welcome-box {
+  grid-column: 1 / -1;
+}
+
+.content-box {
+  background: var(--box-bg);
+  border: 2px solid var(--box-border);
+  padding: 16px 18px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.box-title {
+  font-family: Impact, 'Arial Black', sans-serif;
+  font-size: 1rem;
+  color: var(--yellow);
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px var(--yellow);
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--cyan);
+  padding-bottom: 6px;
+}
+
+.content-box p {
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.hot-tip {
+  color: var(--green) !important;
+  font-size: 0.88rem;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.about-list li {
+  color: var(--cyan);
+  padding: 3px 0;
+  font-size: 0.92rem;
+}
+
+/* Quick Links */
+.quick-links {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links li {
+  padding: 3px 0;
+  border-bottom: 1px dotted rgba(0,255,255,0.2);
+}
+
+.quick-links a {
+  color: var(--hot-pink);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.15s;
+}
+
+.quick-links a:hover {
+  color: var(--yellow);
+  text-decoration: underline;
+}
+
+/* Visitor Counter */
+.counter-box {
+  text-align: center;
+  padding: 8px;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: var(--green);
+}
+
+.counter-label {
+  color: var(--cyan);
+  margin-right: 8px;
+  letter-spacing: 2px;
+}
+
+.counter-digits {
+  background: #000;
+  color: var(--green);
+  border: 2px inset #333;
+  padding: 2px 10px;
+  font-size: 1.3rem;
+  letter-spacing: 4px;
+  text-shadow: 0 0 6px var(--green);
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 16px 10px 0;
+}
+
+.ccn-badge {
+  display: inline-block;
+  border: 3px ridge var(--yellow);
+  background: linear-gradient(180deg, #1a006e, #08003a);
+  padding: 8px 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 0 10px var(--yellow);
+}
+
+.badge-inner {
+  font-family: Impact, 'Arial Black', sans-serif;
+  font-size: 0.8rem;
+  color: var(--yellow);
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 0 0 6px var(--yellow);
+  line-height: 1.6;
+}
+
+.footer-text {
+  color: rgba(200, 200, 255, 0.5);
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 580px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-box {
+    grid-column: 1;
+  }
+
+  .ccn-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .nav-btn {
+    font-size: 0.78rem;
+    padding: 6px 10px;
+  }
+
+  .site-title-box {
+    padding: 10px 14px;
+  }
+}
